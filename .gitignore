@@ -1,0 +1,30 @@
+# OS X
+.DS_Store*
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.directory
+*~
+
+
+# npm
+node_modules
+*.log
+*.gz
+
+# folder
+/production
+/public
+
+
+# Coveralls
+coverage
+
+# Benchmarking
+benchmarks/graphs
+#.env

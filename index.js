@@ -10,7 +10,7 @@ const connectDB = require("./startup/db");
 const cleanup = require("./utils/cleanup");
 dotenv.config();
 envConfig();
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT;
 const app = express();
 app.use(compression());
 app.use(bodyParser.json());
@@ -26,11 +26,8 @@ var corsOptions = {
     }
   },
 };
-//Define directory to serve files
-// app.use("/public", express.static(__dirname + "/public"));
 //connect to MongoDB Database
 connectDB();
-// cleanup();
 //  internal job to cleanup uploaded files
 cron.schedule("*/5 * * * * *", function () {
   cleanup();

@@ -1,6 +1,4 @@
-const path = require("path");
 const { fileService } = require("../services/file");
-const helper = require("./helper");
 
 const cleanup = async () => {
   try {

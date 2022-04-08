@@ -34,7 +34,7 @@ fileService.findByIdAndUpdate = async (id, update) => {
   });
   return file;
 };
-// remove file from db
+// Service function to remove file from db
 fileService.remove = async (params) => {
   let isRemoved = Files.deleteOne(params);
   return isRemoved;
@@ -43,6 +43,8 @@ fileService.remove = async (params) => {
 // definig the file storage to be used with multer
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
+    // Create Destination folder if not exists
+    fs.mkdirSync("." + process.env.FOLDER, { recursive: true });
     cb(null, "." + process.env.FOLDER);
   },
   filename: (req, file, cb) => {
@@ -50,7 +52,7 @@ const fileStorage = multer.diskStorage({
   },
 });
 
-// Helper function to upload the media in a folder and return back the path
+// Service function to upload the media in a folder and return back the path
 fileService.uploadMedia = multer({
   storage: fileStorage,
   fileFilter: function (req, file, callback) {
@@ -58,7 +60,7 @@ fileService.uploadMedia = multer({
     callback(null, true);
   },
 });
-
+// Service function to delete file from directory
 fileService.deleteFile = async (path) => {
   try {
     fs.unlinkSync(path);

@@ -1,11 +1,10 @@
-const { expect } = require("chai");
 var request = require("supertest");
 var app = require("../index.js");
-const connectDB = require("../startup/db.js");
 
 let publicKey;
 let privateKey;
 
+// Test upload file endpoint
 describe("POST /files", () => {
   it("file upload endpoint", (done) => {
     request(app)
@@ -23,6 +22,8 @@ describe("POST /files", () => {
       });
   });
 });
+
+// Test download file endpoint
 describe("Get /files", () => {
   it("file download endpoint", (done) => {
     request(app)
@@ -37,6 +38,8 @@ describe("Get /files", () => {
       });
   });
 });
+
+// Test delete file endpoint
 describe("Delete /files", () => {
   it("file delete endpoint", (done) => {
     request(app)

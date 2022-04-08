@@ -1,7 +1,7 @@
 // Setting up the env variables depend on the node environment
 const envConfig = async () => {
   // const node_env = process.env.NODE_ENV;
-  process.env.PORT = process.env.PORT;
+  process.env.PORT = process.env.PORT || 9000;
   process.env.mongoUrl = process.env.MONGOURL;
   process.env.FOLDER = process.env.FOLDER;
   process.env.DAILYDOWNLOADLIMIT = process.env.DAILYDOWNLOADLIMIT;

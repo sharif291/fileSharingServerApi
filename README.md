@@ -39,6 +39,11 @@
           -I dont have any previous knowledge on unit testing.
           -I have learned the testing and implemented as much as i can.
           -All the resources available at online platform related to tesing is bit confusing between Unit test and Integration Test.
+  # Prerequisite
+    1. Node
+    2. MongoDB
+  
+  
   # Install
   npm install
   # Run

@@ -29,7 +29,7 @@ var corsOptions = {
 //connect to MongoDB Database
 connectDB();
 //  internal job to cleanup uploaded files
-cron.schedule("*/5 * * * * *", function () {
+cron.schedule("*0 0 0 * * *", function () {
   cleanup();
 });
 app.use("/", cors(corsOptions), routes);
